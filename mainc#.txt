@@ -1,0 +1,47 @@
+using System;
+
+namespace ProgramEligibility
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            CheckEligibility();
+            Console.ReadLine();
+        }
+
+        private static void CheckEligibility()
+        {
+            /* Alternative version using string comparison (commented out):
+            Console.WriteLine("Are you currently employed? (e/h)");
+            string employed = Console.ReadLine();
+            Console.WriteLine("Are you a mathematics graduate? (e/h)");
+            string graduate = Console.ReadLine();
+            if (graduate == "e" && employed == "h")
+            {
+                Console.WriteLine("You can apply to the MT program.");
+            }
+            else
+            {
+                Console.WriteLine("Criteria not met.");
+            } */
+
+            // Boolean version - cleaner approach
+            Console.WriteLine("Are you currently employed? (e/h)");
+            Console.WriteLine("Are you a mathematics graduate? (e/h)");
+
+            bool isEmployed  = Console.ReadLine() == "e";
+            bool isGraduate  = Console.ReadLine() == "e";
+
+            // Not employed AND is a graduate
+            if (!isEmployed && isGraduate)
+            {
+                Console.WriteLine("You can apply to the MT program.");
+            }
+            else
+            {
+                Console.WriteLine("Criteria not met.");
+            }
+        }
+    }
+}
